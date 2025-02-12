@@ -18,4 +18,10 @@ public interface ConfigurableListableBeanFactory extends AutowireCapableBeanFact
      */
     BeanDefinition getBeanDefinition(String beanName) throws BeansException;
 
+    /**
+     * 提前实例化所有单例实例
+     *
+     * @throws BeansException
+     */
+    void preInstantiateSingletons();
 }

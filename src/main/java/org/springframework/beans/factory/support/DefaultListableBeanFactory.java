@@ -31,6 +31,14 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
         return beanDefinition;
     }
 
+    @Override
+    public void preInstantiateSingletons() {
+        for (Map.Entry<String, BeanDefinition> entry : beanDefinitionMap.entrySet()) {
+            if (entry.getValue().isSingleton()) {
+                getBean(entry.getKey());
+            }
+        }
+    }
 
     @Override
     public boolean containsBeanDefinition(String beanName) {
@@ -55,4 +63,5 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
         Set<String> strings = beanDefinitionMap.keySet();
         return strings.toArray(new String[0]);
     }
+
 }
