@@ -1,4 +1,4 @@
-package org.springframework.test.ioc.common;
+package org.springframework.test.common;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.test.ioc.bean.Car;
