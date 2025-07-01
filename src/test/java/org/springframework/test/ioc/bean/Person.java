@@ -1,7 +1,7 @@
 package org.springframework.test.ioc.bean;
 
-import org.springframework.beans.DisposableBean;
-import org.springframework.beans.InitializingBean;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
 public class Person implements InitializingBean, DisposableBean {
 

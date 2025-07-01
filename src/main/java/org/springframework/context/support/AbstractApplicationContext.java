@@ -35,6 +35,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
     public void refresh() throws BeansException {
         //创建BeanFactory，加载BeanDefinition
         refreshBeanFactory();
+
         //获取BeanFactory
         ConfigurableListableBeanFactory beanFactory = getBeanFactory();
 
@@ -52,7 +53,6 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
 
         //注册事件监听者
         registerListeners();
-
 
         //提前实例化单例Bean
         beanFactory.preInstantiateSingletons();
@@ -119,6 +119,12 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
     @Override
     public Object getBean(String name) throws BeansException {
         return getBeanFactory().getBean(name);
+    }
+
+
+    @Override
+    public <T> T getBean(Class<T> requiredType) throws BeansException {
+        return getBeanFactory().getBean(requiredType);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package org.springframework.beans.factory.support;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.DisposableBean;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.config.SingletonBeanRegistry;
 
 import java.util.ArrayList;

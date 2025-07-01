@@ -18,6 +18,16 @@ public interface BeanFactory {
 
 
     /**
+     * 根据类型获取Bean
+     * @param requiredType
+     * @return
+     * @param <T>
+     * @throws BeansException
+     */
+    <T> T getBean(Class<T> requiredType) throws BeansException;
+
+
+    /**
      * 根据名称和类型查找bean
      *
      * @param name
